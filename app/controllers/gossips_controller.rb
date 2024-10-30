@@ -18,7 +18,12 @@ class GossipsController < ApplicationController
       render new_gossip_path
     end
   end
+  def update
+  end
 
+  def edit
+    @gossip = Gossip.find(params[:id])
+  end
   def show
     @gossip = Gossip.find(params[:id])
   end

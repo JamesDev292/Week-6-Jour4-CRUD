@@ -1,0 +1,17 @@
+<h1> Bienvenue </h1>
+<%= link_to "créer un gossip", new_gossip_path, class: "lien" %>
+<p> Voici la liste des potins : </p>
+
+
+
+<p>
+
+  <% @gossips.reverse.each do |gossip| %>
+   
+      <h3><%= link_to gossip.title, gossip_path(gossip) %></h3>
+      <p>Écrit par : <%= gossip.user&.first_name  %></p>
+      <a href="<%= edit_gossip_path(gossip.id)%>" class="btn btn-defaut">Editer</a>
+  <% end %>
+  
+</p>
+
