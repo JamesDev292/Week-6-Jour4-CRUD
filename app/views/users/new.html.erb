@@ -1,0 +1,60 @@
+
+<h1>Create a new User</h1>
+
+<h2> "Bienvenue en l'an 2000!!!" </h2>
+
+
+<%= form_with model: @user, url: users_path, local: true do |form| %>
+
+<div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, required: true %>
+
+</div>
+
+<div>
+
+    <%= form.label :last_name %>
+
+    <%= form.text_field :last_name, required: true %>
+
+</div>
+
+<div>
+
+    <%= form.label :email %># a recupe
+
+    <%= form.email_field :email, required: true %>
+
+</div>
+
+<div>
+
+    <%= form.label :age %>
+    <%= form.number_field :age, required: true %> <!-- Correction ici -->
+
+</div>
+
+<div>
+
+    <%= form.label :city_id %> <!-- Assurez-vous d'utiliser l'ID de la ville -->
+
+    <%= form.collection_select :city_id, City.all, :id, :name, { prompt: 'Sélectionnez une ville' }, required: true %> <!-- Utilisez une liste déroulante pour sélectionner une ville -->
+
+</div>
+
+<div>
+
+    <%= form.label :password %>
+
+    <%= form.password_field :password, required: true %>
+
+</div>
+
+<div>
+
+    <%= form.submit "Créer un compte" %>
+
+    </div>
+
+<% end %>

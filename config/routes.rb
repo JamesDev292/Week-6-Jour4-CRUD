@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :gossips
   resources :users
   resources :cities
+  resources :sessions
   # Defines the root path route ("/")
   # root "posts#index"
 end
