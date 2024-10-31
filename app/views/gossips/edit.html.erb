@@ -1,7 +1,7 @@
 
 <h1>Edit Gossip</h1>
 
-<%= form_with(model: @gossips, local: true) do |form| %>
+<%= form_with(model: @gossip, local: true, method: :PATCH) do |form| %>
   <div>
     <%= form.label :title, "Titre" %><br>
     <%= form.text_field :title, value: @gossip.title %>
